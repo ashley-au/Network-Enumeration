@@ -4,7 +4,7 @@
 This script performs comprehensive network enumeration designed to discover stealth devices and enumerate all services on networks you own. It uses multiple reconnaissance techniques to catch devices that block standard ping probes or implement stealth measures.
 
 ## Features
-- **Multi-Phase Discovery**: Uses 5 different phases to ensure complete coverage
+- **Multi-Phase Discovery**: Uses 6 different phases to ensure complete coverage
 - **Stealth Device Detection**: Specifically designed to catch ping-blocking devices
 - **Comprehensive Service Enumeration**: Identifies all TCP/UDP services
 - **Application-Specific Enumeration**: Deep dives into SMB, NFS, HTTP, SSH services
