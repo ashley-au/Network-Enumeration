@@ -10,7 +10,7 @@ Both network enumeration scripts now generate comprehensive HTML reports alongsi
 - Console output (real-time)
 - HTML report: `network_discovery_YYYYMMDD_HHMMSS.html`
 
-### 2. `network_enum_v2.sh` - Comprehensive Enumeration with HTML Report  
+### 2. `network_enum.sh` - Comprehensive Enumeration with HTML Report  
 **Generates**:
 - Text report: `NETWORK_ENUMERATION_REPORT.txt`
 - HTML report: `NETWORK_ENUMERATION_REPORT.html`
@@ -63,7 +63,7 @@ Both network enumeration scripts now generate comprehensive HTML reports alongsi
   - `ICMP_ADV` - Advanced ICMP
   - `TCP_CONNECT` - Direct connection
 
-### **Comprehensive Script HTML Report (`network_enum_v2.sh`)**
+### **Comprehensive Script HTML Report (`network_enum.sh`)**
 
 #### **Key Sections:**
 1. **Header with Gradient Design**
@@ -127,7 +127,7 @@ Each device gets a dedicated card containing:
 ### **Comprehensive Enumeration HTML Report**
 ```bash
 # Generate comprehensive HTML report with detailed analysis
-sudo ./network_enum_v2.sh 192.168.1.0/24 /tmp/my_scan
+sudo ./network_enum.sh 192.168.1.0/24 /tmp/my_scan
 
 # Output: /tmp/my_scan/NETWORK_ENUMERATION_REPORT.html
 # - Individual device cards with detailed information
