@@ -77,7 +77,7 @@ These scripts implement a **verification-first approach**:
 - Pre-assessment before comprehensive scans
 - Environments where root access is limited
 
-### `network_enum_v2.sh` - Comprehensive Network Enumeration
+### `network_enum.sh` - Comprehensive Network Enumeration
 
 **Purpose**: Full-featured network enumeration with verification-based discovery plus extensive port and service scanning.
 
@@ -124,11 +124,11 @@ sudo pacman -S nmap smbclient nfs-utils curl
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/network-enumeration-tools.git
+git clone https://github.com/ashley-au/network-enumeration-tools.git
 cd network-enumeration-tools
 
 # Make scripts executable
-chmod +x network_discover.sh network_enum_v2.sh
+chmod +x network_discover.sh network_enum.sh
 
 # Verify installation
 ./network_discover.sh --help
@@ -178,13 +178,13 @@ Reports generated:
 
 ```bash
 # Requires sudo for advanced scanning capabilities
-sudo ./network_enum_v2.sh 192.168.1.0/24
+sudo ./network_enum.sh 192.168.1.0/24
 
 # Specify custom output directory
-sudo ./network_enum_v2.sh 10.0.0.0/24 /tmp/my_scan_results
+sudo ./network_enum.sh 10.0.0.0/24 /tmp/my_scan_results
 
 # The script will create timestamped directories if none specified
-sudo ./network_enum_v2.sh 172.16.0.0/16
+sudo ./network_enum.sh 172.16.0.0/16
 ```
 
 **Example Output**:
@@ -286,7 +286,7 @@ Each candidate undergoes rigorous verification using up to 6 different methods:
 | **🔗 TCP Connect** | Full TCP connections to common ports | Last resort for heavily filtered devices |
 | **📊 Combined Analysis** | Cross-verification of results | Ensures accurate classification |
 
-#### Phase 3: Comprehensive Analysis (network_enum_v2.sh only)
+#### Phase 3: Comprehensive Analysis (network_enum.sh only)
 For verified hosts only:
 
 1. **🔍 Full Port Scanning**: Complete TCP and UDP port enumeration
@@ -312,7 +312,7 @@ For verified hosts only:
 - **nmap** - Core network scanning engine
 - **Standard Linux utilities** (grep, awk, sed, sort, etc.)
 
-### Additional Requirements (for network_enum_v2.sh)
+### Additional Requirements (for network_enum.sh)
 - **smbclient** - SMB/CIFS share enumeration
 - **showmount** - NFS export discovery
 - **curl** - HTTP service enumeration
@@ -395,7 +395,7 @@ for subnet in 192.168.{1..5}.0/24; do
 done
 
 # Large enterprise network
-sudo ./network_enum_v2.sh 10.0.0.0/8 /opt/scan_results/enterprise_scan
+sudo ./network_enum.sh 10.0.0.0/8 /opt/scan_results/enterprise_scan
 ```
 
 ### Automation and Scheduling
@@ -410,7 +410,7 @@ mkdir -p "$SCAN_DIR"
 ./network_discover.sh 192.168.1.0/24 > "$SCAN_DIR/discovery.txt"
 
 # Full enumeration on critical networks
-sudo ./network_enum_v2.sh 192.168.1.0/24 "$SCAN_DIR/enumeration"
+sudo ./network_enum.sh 192.168.1.0/24 "$SCAN_DIR/enumeration"
 
 # Archive results
 tar -czf "$SCAN_DIR.tar.gz" "$SCAN_DIR"
@@ -493,7 +493,7 @@ copies or substantial portions of the Software.
 
 1. **Permission Denied**:
    ```bash
-   chmod +x network_discover.sh network_enum_v2.sh
+   chmod +x network_discover.sh network_enum.sh
    ```
 
 2. **Missing Dependencies**:
